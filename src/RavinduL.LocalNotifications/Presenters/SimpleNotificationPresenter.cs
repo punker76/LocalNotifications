@@ -7,9 +7,15 @@
 	using Windows.UI.Xaml.Media;
 	using Windows.UI.Xaml.Media.Animation;
 
+	/// <summary>
+	/// A simple implmentation of a <see cref="LocalNotificationPresenter"/> to send text notifications to users.
+	/// </summary>
 	public sealed class SimpleNotificationPresenter : LocalNotificationPresenter
 	{
 		#region Dependency properties
+		/// <summary>
+		/// A sequence of characters from the Segoe MDL2 Assets font that can be displayed alongside the text of the notification.
+		/// </summary>
 		public string Glyph
 		{
 			get { return (string)GetValue(GlyphProperty); }
@@ -19,6 +25,9 @@
 		public static readonly DependencyProperty GlyphProperty =
 			DependencyProperty.Register(nameof(Glyph), typeof(string), typeof(SimpleNotificationPresenter), new PropertyMetadata(""));
 
+		/// <summary>
+		/// The text contained within the notification.
+		/// </summary>
 		public string Text
 		{
 			get { return (string)GetValue(TextProperty); }
@@ -28,6 +37,9 @@
 		public static readonly DependencyProperty TextProperty =
 			DependencyProperty.Register(nameof(Text), typeof(string), typeof(SimpleNotificationPresenter), new PropertyMetadata(""));
 
+		/// <summary>
+		/// The action invoked when the user activates the local notification.
+		/// </summary>
 		public Action Action { get; set; }
 		#endregion
 
@@ -58,6 +70,10 @@
 			}
 		}
 		
+		/// <summary>
+		/// Creates an instance of the <see cref="SimpleNotificationPresenter"/> class.
+		/// </summary>
+		/// <param name="duration">The time duration for which the the notification should persist on the screen.</param>
 		public SimpleNotificationPresenter(TimeSpan duration) : base(duration)
 		{
 			DefaultStyleKey = typeof(SimpleNotificationPresenter);
@@ -133,7 +149,7 @@
 				translation.Y = 20;
 			}
 		}
-
+		
 		protected override void OnShowing()
 		{
 			ExecuteAfterLoading(ShowStoryboard.Begin);

@@ -4,6 +4,9 @@
 	using System.Collections.Generic;
 	using Windows.UI.Xaml.Controls;
 
+	/// <summary>
+	/// Manages <see cref="LocalNotificationPresenter"/>s and associated logic.
+	/// </summary>
 	public class LocalNotificationManager
 	{
 		private Grid container;
@@ -12,12 +15,21 @@
 
 		Queue<Tuple<LocalNotificationPresenter, LocalNotificationCollisionBehaviour>> queue;
 
+		/// <summary>
+		/// Creates an instance of the <see cref="LocalNotificationManager"/> class.
+		/// </summary>
+		/// <param name="container">The grid within which all <see cref="LocalNotificationPresenter"/>s will reside.</param>
 		public LocalNotificationManager(Grid container)
 		{
 			this.container = container;
 			queue = new Queue<Tuple<LocalNotificationPresenter, LocalNotificationCollisionBehaviour>>();
 		}
 
+		/// <summary>
+		/// Shows a local notification.
+		/// </summary>
+		/// <param name="presenter">The control that functions as the notification.</param>
+		/// <param name="collisionBehaviour">The way in which collisions are handled for the specified <see cref="LocalNotificationPresenter"/>.</param>
 		public void Show(LocalNotificationPresenter presenter, LocalNotificationCollisionBehaviour collisionBehaviour = LocalNotificationCollisionBehaviour.Wait)
 		{
 			if (current == null)
@@ -66,11 +78,17 @@
 			}
 		}
 
+		/// <summary>
+		/// Hides the current local notification if there is one.
+		/// </summary>
 		public void HideCurrent()
 		{
 			current?.Hide();
 		}
 
+		/// <summary>
+		/// Hides the current local notification and cancels those that are scheduled for the future. 
+		/// </summary>
 		public void HideAll()
 		{
 			queue.Clear();
