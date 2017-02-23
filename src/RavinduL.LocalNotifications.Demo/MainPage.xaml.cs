@@ -63,10 +63,14 @@
 
 		private void ShowButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 		{
-			manager.Show(new SimpleNotificationPresenter(TimeSpan.FromSeconds(Double.Parse(NotificationDurationBox.Text)))
+			manager.Show(new SimpleNotificationPresenter
+			(
+				TimeSpan.FromSeconds(Double.Parse(NotificationDurationBox.Text)), 
+				text: NotificationTextBox.Text,
+				action: async () => await new MessageDialog(NotificationTextBox.Text).ShowAsync(),
+				glyph: "\uE001"
+			)
 			{
-				Text = NotificationTextBox.Text,
-				Action = async() => await new MessageDialog(NotificationTextBox.Text).ShowAsync(),
 				Background = GetSolidColorBrush(NotificationBackgroundColorBox.SelectedIndex),
 				Foreground = GetSolidColorBrush(NotificationForegroundColorBox.SelectedIndex),
 			}, 

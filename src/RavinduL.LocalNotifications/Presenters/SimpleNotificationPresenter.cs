@@ -44,7 +44,7 @@
 			DependencyProperty.Register(nameof(Text), typeof(string), typeof(SimpleNotificationPresenter), new PropertyMetadata(""));
 
 		/// <summary>
-		/// The action invoked when the user activates the local notification.
+		/// The logic to be executed when the user activates the notification.
 		/// </summary>
 		public Action Action { get; set; }
 		#endregion
@@ -75,16 +75,22 @@
 				LayoutRoot.ManipulationMode = (newState == LocalNotificationState.Shown ? ManipulationModes.TranslateY : ManipulationModes.None);
 			}
 		}
-		
+
 		/// <summary>
 		/// Creates an instance of the <see cref="SimpleNotificationPresenter"/> class.
 		/// </summary>
 		/// <param name="duration">The time duration for which the the notification should persist on the screen.</param>
-		public SimpleNotificationPresenter(TimeSpan duration) : base(duration)
+		/// <param name="text">The text contained within the notification.</param>
+		/// <param name="action">The logic to be executed when the user activates the notification.</param>
+		/// <param name="glyph">A sequence of characters from the Segoe MDL2 Assets font that can be displayed alongside the text of the notification.</param>
+		public SimpleNotificationPresenter(TimeSpan duration, string text, Action action = null, string glyph = null) : base(duration)
 		{
 			DefaultStyleKey = typeof(SimpleNotificationPresenter);
 
 			Duration = duration;
+			Text = text;
+			Action = action;
+			Glyph = glyph;
 		}
 
 		protected override void OnLoaded(object sender, RoutedEventArgs e)
