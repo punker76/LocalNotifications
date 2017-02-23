@@ -9,7 +9,7 @@
 	/// </summary>
 	public abstract class LocalNotificationPresenter : Control
 	{
-		protected DispatcherTimer timer;
+		private DispatcherTimer timer;
 
 		/// <summary>
 		/// The interval of time for which the <see cref="LocalNotificationPresenter"/> will persist on screen, fully visible to the user, awaiting either interaction or to be hidden. 

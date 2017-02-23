@@ -8,7 +8,7 @@
 	using Windows.UI.Xaml.Media.Animation;
 
 	/// <summary>
-	/// A simple implmentation of a <see cref="LocalNotificationPresenter"/> to send text notifications to users.
+	/// A simple implementation of a <see cref="LocalNotificationPresenter"/> to send text notifications to users.
 	/// </summary>
 	public sealed class SimpleNotificationPresenter : LocalNotificationPresenter
 	{
@@ -22,6 +22,9 @@
 			set { SetValue(GlyphProperty, value); }
 		}
 
+		/// <summary>
+		/// Dependency property for <see cref="SimpleNotificationPresenter.Glyph"/>.
+		/// </summary>
 		public static readonly DependencyProperty GlyphProperty =
 			DependencyProperty.Register(nameof(Glyph), typeof(string), typeof(SimpleNotificationPresenter), new PropertyMetadata(""));
 
@@ -34,6 +37,9 @@
 			set { SetValue(TextProperty, value); }
 		}
 
+		/// <summary>
+		/// Dependency property for <see cref="SimpleNotificationPresenter.Text"/>.
+		/// </summary>
 		public static readonly DependencyProperty TextProperty =
 			DependencyProperty.Register(nameof(Text), typeof(string), typeof(SimpleNotificationPresenter), new PropertyMetadata(""));
 
@@ -125,6 +131,7 @@
 			Target.Tapped -= Target_Tapped;
 
 			Action?.Invoke();
+
 			Hide();
 		}
 

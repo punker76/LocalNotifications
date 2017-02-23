@@ -26,7 +26,7 @@
 		Shown,
 
 		/// <summary>
-		/// The <see cref="LocalNotificationPresenter"/> transitioning to the <see cref="LocalNotificationState.Shown"/> state.
+		/// The <see cref="LocalNotificationPresenter"/> transitioning to the <see cref="LocalNotificationState.Shown"/> state, but not from being hidden.
 		/// </summary>
 		Restoring,
 	}
