@@ -5,6 +5,7 @@
 
 	<Style TargetType="presenters:SimpleNotificationPresenter">
 		<Setter Property="Background" Value="DarkGreen" />
+		<Setter Property="Foreground" Value="White" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="Template">
