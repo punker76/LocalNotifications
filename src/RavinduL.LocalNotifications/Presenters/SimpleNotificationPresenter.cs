@@ -60,7 +60,6 @@
 		private Grid LayoutRoot;
 		private Grid Target;
 		private Button HideButton;
-		private Grid TitleBarBackgroundGrid;
 
 		private TranslateTransform translation
 		{
@@ -103,7 +102,6 @@
 			LayoutRoot = (Grid)GetTemplateChild(nameof(LayoutRoot));
 			Target = (Grid)GetTemplateChild(nameof(Target));
 			HideButton = (Button)GetTemplateChild(nameof(HideButton));
-			TitleBarBackgroundGrid = (Grid)GetTemplateChild(nameof(TitleBarBackgroundGrid));
 
 			ShowStoryboard = (Storyboard)GetTemplateChild(nameof(ShowStoryboard));
 			HideStoryboard = (Storyboard)GetTemplateChild(nameof(HideStoryboard));
