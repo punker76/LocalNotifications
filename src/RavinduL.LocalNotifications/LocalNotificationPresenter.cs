@@ -176,5 +176,10 @@
 		protected virtual void OnStateChanged(LocalNotificationState newState, LocalNotificationState previousState)
 		{
 		}
+
+		/// <summary>
+		/// Invoked just before the notification is displayed.
+		/// </summary>
+		protected abstract override void OnApplyTemplate();
 	}
 }
