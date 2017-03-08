@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localnotifications',['LocalNotifications',['../index.html',1,'']]]
+  ['getting_20started',['Getting Started',['../_getting_started.html',1,'']]]
 ];

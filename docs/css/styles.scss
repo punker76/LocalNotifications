@@ -7,6 +7,8 @@ $color_blue: #00f;
 $color_red: #f00;
 $color_light_gray: #efefef;
 
+$body_max_width: 1000px;
+
 * {
 	box-sizing: border-box;
 	text-shadow: none !important;
@@ -27,22 +29,28 @@ pre, code {
 }
 
 body{
-	max-width: 1000px;
+	max-width: $body_max_width;
 	margin: 0 auto;
 }
 
-.contents a{
+.contents {
 
-	color: $color_belize_hole;
-
-	&:visited {
-		color: $color_belize_hole;
+	img {
+		max-width: 100%;
 	}
 
-	&:hover{
-		text-decoration: none;
-		color: $color_wet_asphalt;
-		border-bottom: 1px solid  $color_wet_asphalt;
+	a{
+		color: $color_belize_hole;
+
+		&:visited {
+			color: $color_belize_hole;
+		}
+
+		&:hover{
+			text-decoration: none;
+			color: $color_wet_asphalt;
+			border-bottom: 1px solid  $color_wet_asphalt;
+		}
 	}
 }
 
@@ -84,12 +92,15 @@ span.mlabel {
 }
 
 .memitem {
+
 	.memproto {
 		background: none;
 		background-color: $color_light_gray;
 		border-color: $color_silver;
 		box-shadow: none;
 		border-bottom: 1px solid $color_silver;
+		max-width: $body_max_width - 20px; // 20px reduced to compensate for left and right margins by .contents
+		overflow-x: auto;
 
 		* {
 			font-family: $font_monospaced;
@@ -99,6 +110,7 @@ span.mlabel {
 			color: $color_blue;
 		}
 	}
+
 	.memdoc {
 		background: none;
 		box-shadow: none;
@@ -137,6 +149,7 @@ span.mlabel {
 	}
 
 	li {
+
 		a{
 			color: #000;
 
@@ -158,11 +171,58 @@ hr.footer {
 }
 
 address.footer {
+	width: 50%;
 	margin: 10px 0 20px 0;
+	float: right;
+}
+
+small.footer-credit {
+	display: inline-block;
+	margin-top: 12px;
+	margin-left: 12px;
 }
 
 .toc {
 	background: none;
 	background-color: #fff !important;
 	border-radius: 0 !important;
+}
+
+// TODO: Reduce heading sizes for smaller devices.
+
+@media screen and (max-width: 424px) {
+
+	#projectname {
+		font-size: 200%;
+	}
+
+	#projectbrief {
+		font-size: 110%;
+	}
+}
+
+@media screen and (max-width: 300px) {
+
+	#projectname {
+		font-size: 180%;
+	}
+
+	#projectbrief {
+		font-size: 100%;
+	}
+}
+
+@media screen and (max-width: 360px) {
+
+	small.footer-credit {
+		margin: 12px auto 0;
+		display: block;
+		text-align: center;
+	}
+
+	address.footer {
+		width: auto;
+		float: none;
+		text-align: center;
+	}
 }

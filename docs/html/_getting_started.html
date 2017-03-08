@@ -26,8 +26,9 @@
 			<tbody>
 			<tr style="height: 56px;">
 				<td id="projectalign" style="padding-left: 0.5em;">
-					<div id="projectname">LocalNotifications
-					&#160;<span id="projectnumber">v2</span>
+					<div id="projectname">
+					<a href="index.html">LocalNotifications</a>
+					<span id="projectnumber">v2</span>
 					</div>
 					<div id="projectbrief">Local (in-app) notifications for UWP applications.</div>
 				</td>
@@ -69,52 +70,57 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#Introduction">Introduction</a></li>
-<li class="level1"><a href="#Installation">Installation</a></li>
-<li class="level1"><a href="#DemonstrativeApplication">Demonstrative Application</a></li>
-<li class="level1"><a href="#HowItWorks">How it Works</a></li>
-<li class="level1"><a href="#Usage">Usage</a></li>
+<ul><li class="level1"><a href="#GettingStarted_Installation">Installation</a></li>
+<li class="level1"><a href="#GettingStarted_DemonstrativeApplication">Demonstrative Application</a></li>
+<li class="level1"><a href="#GettingStarted_HowItWorks">How it Works</a></li>
+<li class="level1"><a href="#GettingStarted_Usage">Usage</a></li>
 </ul>
 </div>
-<div class="textblock"><h1><a class="anchor" id="Introduction"></a>
-Introduction</h1>
-<p>This library enables display and management of local (in-app) notifications.</p>
+<div class="textblock"><p>This library enables display and management of local (in-app) notifications.</p>
 <p>Local notifications are managed by your application, and not the operating system, unlike <a href="https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-badges-notifications#notifications" target="_blank">Windows toast notifications</a>. They therefore do not appear in the action center.</p>
-<h1><a class="anchor" id="Installation"></a>
+<p><br />
+ </p>
+<h1><a class="anchor" id="GettingStarted_Installation"></a>
 Installation</h1>
-<p>The preferred method of installing LocalNotifications is via <a href="https://www.nuget.org/" target="_blank">Nuget</a>. You can either search for and install <a href="https://www.nuget.org/packages/RavinduL.LocalNotifications" target="_blank">the package</a> graphically via the NuGet package manager within Visual Studio, or run the following command in the package manager console within VS,</p>
+<p>The preferred method of installing LocalNotifications is via <a href="https://www.nuget.org/" target="_blank">Nuget</a>. You can either search for and install <a href="https://www.nuget.org/packages/RavinduL.LocalNotifications" target="_blank">the package</a> graphically via the NuGet gallery within Visual Studio, or run the following command in the Package Manager Console,</p>
 <blockquote class="doxtable">
-<p><code>Install-Package RavinduL.LocalNotifications</code>. </p>
+<p><code>Install-Package RavinduL.LocalNotifications</code> </p>
 </blockquote>
-<p>Alternatively, you could clone or download the <a href="https://github.com/RavinduL/LocalNotifications" target="_blank">GitHub repository</a> and reference the project file located at the path '<code>src/&thinsp;RavinduL.LocalNotifications/&thinsp;RavinduL.LocalNotifications.csproj</code>' in your Universal Windows project.</p>
-<p>Click <a class="el" href="_getting_started.html#Usage">here</a> to jump directly to the usage section.</p>
-<h1><a class="anchor" id="DemonstrativeApplication"></a>
+<p>Alternatively, you could clone or download the <a href="https://github.com/RavinduL/LocalNotifications" target="_blank">GitHub repository</a> and reference the project file located at the path '<code>src / RavinduL.LocalNotifications / RavinduL.LocalNotifications.csproj</code>' in your Universal Windows project.</p>
+<p>Click <a class="el" href="_getting_started.html#GettingStarted_Usage">here</a> to jump directly to the usage section.</p>
+<p><br />
+ </p>
+<h1><a class="anchor" id="GettingStarted_DemonstrativeApplication"></a>
 Demonstrative Application</h1>
-<p>An application that demonstrates the functionality of the library (pictured on the <a href="index.html">home page</a>) is included in the GitHub repository, located at the path '<code>src/&thinsp;RavinduL.LocalNotifications.Demo/</code>'. To run this,</p>
+<p>An application (pictured on the <a href="index.html">home page</a>) that demonstrates the functionality of the library is included in the GitHub repository, located at the path '<code>src/&thinsp;RavinduL.LocalNotifications.Demo/</code>'. To run this,</p>
 <ol type="1">
 <li>Open Visual Studio solution file located at the path '<code>src/&thinsp;RavinduL.LocalNotifications.sln</code>'.</li>
 <li>Set the 'RavinduL.LocalNotifications.Demo' project as the startup project (an option found within the context menu of associated item within the Solution Explorer).</li>
 <li>Ensure that the 'Build' and 'Deploy' options for the app are enabled within the Configuration Manager.</li>
 <li>Debug (<code>F5</code>) or Run (<code>Ctrl</code> + <code>F5</code>) the project.</li>
 </ol>
-<p>To browse the source code of the demonstrative app on GitHub, click <a href="https://github.com/RavinduL/LocalNotifications/tree/master/src/RavinduL.LocalNotifications.Demo" target="_blank">here</a>.</p>
-<h1><a class="anchor" id="HowItWorks"></a>
+<p>To browse the source code of the demonstrative app, click <a href="https://github.com/RavinduL/LocalNotifications/tree/master/src/RavinduL.LocalNotifications.Demo" target="_blank">here</a>.</p>
+<p><br />
+ </p>
+<h1><a class="anchor" id="GettingStarted_HowItWorks"></a>
 How it Works</h1>
 <p>Showing a local notification requires two components,</p>
 <ol type="1">
 <li>a presenter, and...</li>
 <li>a manager.</li>
 </ol>
-<p>A presenter is the actual notification that the user sees. It is a templated control containing the definition of what the notification looks and behaves like (in the form of visual elements, animations, etc...) and the logic for it to be shown, hidden and do whatever else it does. It derives from the <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_presenter.html">LocalNotificationPresenter</a> class, that is a sub-class of the XAML <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Control" target="_blank">Control</a> class. Presenters provided with the library are defined within the <a class="el" href="namespace_ravindu_l_1_1_local_notifications_1_1_presenters.html">Presenters</a> namespace.</p>
+<p>A presenter is the actual notification that the user sees. It is a templated control containing the definition of what the notification looks and how it behaves (in the form of visual elements, animations, etc...), and the logic for it to be shown, hidden and do whatever else it does. It derives from the <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_presenter.html">LocalNotificationPresenter</a> class, that is a sub-class of the XAML <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Control" target="_blank">Control</a> class. Presenters provided with the library are defined within the <a class="el" href="namespace_ravindu_l_1_1_local_notifications_1_1_presenters.html">Presenters</a> namespace.</p>
 <p>A manager (an instance of the <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_manager.html">LocalNotificationManager</a> class) is responsible for adding and removing presenters to and from the XAML visual tree as needed. It 'latches' on to a <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Grid" target="_blank">Grid</a> element for this purpose.</p>
-<h1><a class="anchor" id="Usage"></a>
+<p><br />
+ </p>
+<h1><a class="anchor" id="GettingStarted_Usage"></a>
 Usage</h1>
 <p><b>Step 1: Create a Grid element to be assigned to the manager.</b></p>
-<pre><code class="xml">&lt;Grid x:Name="NotificationGrid" /&gt;</code></pre><p>In order to ensure that the notifications stay above other elements, define the Grid towards the bottom of the XAML file (thereby positioning it above the elements defined physically above it, within the common parent element). For example,</p>
+<pre><code class="xml">&lt;Grid x:Name="NotificationGrid" /&gt;</code></pre><p>In order to ensure that the local notifications stay above other elements, define the Grid towards the bottom of the XAML file (thereby positioning it above the elements defined physically above it in the markup, within the common parent element). For example,</p>
 <pre><code class="xml">&lt;Page ...&gt;
     &lt;Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"&gt;
 &#160;
-        &lt;!-- Elements *overlapped by* NotificationGrid go above this comment. --&gt;
+        &lt;!-- Elements *overlapped by* NotificationGrid (and thereby, local notifications) go above this comment. --&gt;
         &lt;Grid x:Name="NotificationGrid" /&gt;
     &lt;/Grid&gt;
 &lt;/Page&gt;
@@ -133,10 +139,10 @@ Usage</h1>
         manager = new LocalNotificationManager(NotificationGrid);
     }   
 }
-</code></pre><p>In this case, a field has been declared within the Page, and instantiated to the manager when the page is navigated to.</p>
+</code></pre><p>In this case, a field has been declared within the Page, and instantiated as the manager when the page is navigated to.</p>
 <p><b>Step 3: Display a presenter via the manager.</b></p>
 <p>The presenter used for the purpose of this demonstration would be the <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_presenters_1_1_simple_notification_presenter.html">SimpleNotificationPresenter</a>, and implementation that is provided by default with the library.</p>
-<p>Whenever a notification is needed to be shown from the manager (in this case, in the click event handler of a button), the <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_manager.html#ab7d2d914d0b8ec3eadd6acc0f6032e04">LocalNotificationManager.Show</a> (click for documentation) method can be invoked. An instance of a presenter is a required parameter of this method.</p>
+<p>Whenever a notification is needed to be shown from the manager (in this case, in the click event handler of a button), the <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_manager.html#ab7d2d914d0b8ec3eadd6acc0f6032e04">LocalNotificationManager.Show</a> method can be invoked. An instance of a presenter is a required parameter of this method.</p>
 <pre><code class="cs">private void Button_Click(object sender, RoutedEventArgs e)
 {
     var presenter = new SimpleNotificationPresenter
@@ -150,17 +156,18 @@ Usage</h1>
     };
 &#160;
     manager.Show(presenter);
-}</code></pre><p>The <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_manager.html#ab7d2d914d0b8ec3eadd6acc0f6032e04">LocalNotificationManager.Show</a> method accepts an optional parameter of the type <a class="el" href="namespace_ravindu_l_1_1_local_notifications.html#a4fcf943675e4562cf4f893ea70baf3bc">LocalNotificationCollisionBehaviour</a> (click for documentation). This defines how a new notification will behave when there already is one visible. </p>
+}</code></pre><p>The <a class="el" href="class_ravindu_l_1_1_local_notifications_1_1_local_notification_manager.html#ab7d2d914d0b8ec3eadd6acc0f6032e04">LocalNotificationManager.Show</a> method accepts an optional parameter of the type <a class="el" href="namespace_ravindu_l_1_1_local_notifications.html#a4fcf943675e4562cf4f893ea70baf3bc">LocalNotificationCollisionBehaviour</a>. This defines how a new notification will behave when there already is one visible.</p>
+<p><br />
+ </p>
 </div></div><!-- contents -->
 		<!-- HTML footer for doxygen 1.8.13-->
 		<!-- start footer part -->
 		<hr class="footer"/>
+		<small class="footer-credit">Crafted with ❤ by <a href="https://twitter.com/Ravindu_L" target="_blank">@Ravindu_L</a></small>
 		<address class="footer">
 			<small>
 				Generated by
-				<!-- <a href="http://www.doxygen.org/index.html"> -->
-					<img class="footer" src="doxygen.png" alt="doxygen"/>
-				<!-- </a>  -->
+				<img class="footer" src="doxygen.png" alt="doxygen"/>
 				1.8.13
 			</small>
 		</address>

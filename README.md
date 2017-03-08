@@ -6,5 +6,7 @@ LocalNotifications is a library to create and manage in-app notifications in Uni
 
 ![](images/demo.gif)
 
-## Looking for v1 (replaced)?
+## Looking for v1?
 Version 1 of the project was moved to the branch [v1](https://github.com/RavinduL/LocalNotifications/tree/v1/), and will no longer be updated. Old versions of the package will still be available for download via NuGet. 
+
+<br/>

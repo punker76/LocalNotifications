@@ -1,24 +1,21 @@
-/*
+/* Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name> */
 
-Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
-
-*/
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 10px;
-  background: white;
-  border: 1px solid #efefef;
+	display: block;
+	overflow-x: auto;
+	padding: 10px;
+	background: white;
+	border: 1px solid #efefef;
 }
 
 .hljs * {
-  font-family: "Consolas", monospace !important;
+	font-family: "Consolas", monospace !important;
 }
 
 .hljs-comment,
 .hljs-quote,
 .hljs-variable {
-  color: #008000 !important;
+	color: #008000 !important;
 }
 
 .hljs-keyword,
@@ -26,7 +23,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .hljs-built_in,
 .hljs-name,
 .hljs-tag {
-  color: #00f !important;
+	color: #00f !important;
 }
 
 .hljs-string,
@@ -38,35 +35,35 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .hljs-template-variable,
 .hljs-type,
 .hljs-addition {
-  color: #a31515 !important;
+	color: #a31515 !important;
 }
 
 .hljs-deletion,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-meta {
-  color: #2b91af !important;
+	color: #2b91af !important;
 }
 
 .hljs-doctag {
-  color: #808080 !important;
+	color: #808080 !important;
 }
 
 .hljs-attr {
-  color: #f00 !important;
+	color: #f00 !important;
 }
 
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link {
-  color: #00b0e8 !important;
+	color: #00b0e8 !important;
 }
 
 
 .hljs-emphasis {
-  font-style: italic !important;
+	font-style: italic !important;
 }
 
 .hljs-strong {
-  font-weight: bold !important;
+	font-weight: bold !important;
 }

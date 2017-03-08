@@ -5,7 +5,8 @@
 		<tab type="mainpage" visible="yes" title="Home"/>
 		<tab type="user" visible="yes" title="Guides" url="@ref GettingStarted">
 			<tab type="user" visible="yes" title="Getting Started" url="@ref GettingStarted"/>
-			<tab type="user" visible="yes" title="Making Your Own Notification" url="@ref MakingYourOwn"/>
+			<tab type="user" visible="yes" title="Creating Your Own Notification" url="@ref CreatingYourOwnNotification"/>
+			<tab type="user" visible="yes" title="Creating an App-Wide Notification Manager" url="@ref CreatingAnAppWideNotificationManager"/>
 		</tab>
 		<tab type="modules" visible="no" title="" intro=""/>
 		<tab type="namespaces" visible="no" title="">

@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    hljs.configure({
-        tabReplace: "    ",
-    });
+	hljs.configure({
+		tabReplace: "    ",
+	});
 
-    hljs.initHighlighting();
+	hljs.initHighlighting();
 });
