@@ -1166,7 +1166,8 @@ HTML_EXTRA_STYLESHEET  = docs/css/vs.css \
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_FILES       = docs/js/highlight.pack.js \
-                         docs/js/scripts.min.js
+                         docs/js/scripts.min.js \
+                         docs/googlee199dbb99e087f85.html
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
